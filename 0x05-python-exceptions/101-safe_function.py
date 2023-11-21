@@ -1,22 +1,13 @@
 #!/usr/bin/python3
-# 101-safe_function.py
-# MamaboloKatlego <rabotaikatlego@gmail.com>
-
-import sys
-
-
-def safe_function(fct, *args):
-    """Executes a function safely.
-    Args:
-        function: The function to execute.
-        args: Arguments for function.
-    Returns:
-        If an error occurs - None.
-        Otherwise - the result of the call to function.
-    """
-    try:
-        result = fct(*args)
-        return (result)
-    except:
-        print("Exception: {}".format(sys.exc_info()[1]), file=sys.stderr)
-        return (None)
+def safe_print_list(my_list=[], x=0):
+	printed = 0
+	try:
+		if x > 0:
+			for num in my_list[:x]:
+				print(str(num), end='')
+				printed = printed + 1;
+	except IndexError as e:
+		print("")
+		return (printed)
+	print("")
+	return (printed)

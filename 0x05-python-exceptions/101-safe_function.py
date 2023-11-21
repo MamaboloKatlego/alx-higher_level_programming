@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 # 101-safe_function.py
-# Mamabolo Katlego <rabotaikatlego@gmail.com>
+# MamaboloKatlego <rabotaikatlego@gmail.com>
 
 import sys
-
 
 def safe_function(fct, *args):
     """Executes a function safely.

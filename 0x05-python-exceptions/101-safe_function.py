@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # 101-safe_function.py
-# Brennan D Baraban <375@holbertonschool.com>
+# MamaboloKatlego <rabotaikatlego@gmail.com>
 
 import sys
 
@@ -8,11 +8,11 @@ import sys
 def safe_function(fct, *args):
     """Executes a function safely.
     Args:
-        fct: The function to execute.
-        args: Arguments for fct.
+        function: The function to execute.
+        args: Arguments for function.
     Returns:
         If an error occurs - None.
-        Otherwise - the result of the call to fct.
+        Otherwise - the result of the call to function.
     """
     try:
         result = fct(*args)

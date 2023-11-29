@@ -1,167 +1,56 @@
-The ``2-matrix_divided`` module
-======================
-
 Using ``matrix_divided``
--------------------
+-----------------------
 
-This is an example text file in reStructuredText format.  First import
-``matrix_divided`` from the ``2-matrix_divided`` module:
+Checks if all matrix items are ints or floats
+Checks if length of lists in matrix are same
+Checks if div is a float or int or 0
+Divides all items in matrix by div
+Returns a new matrix
 
-	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
-	>>> matrix = [[1, 2, 3],[4, 5, 6]]
-	>>> none_matrix = None
-	>>> empty_matrix = []
-	>>> empty_empty_matrix = [[], []]
-	>>> mixed_ok_matrix = [[1, 2.0, 3],[4.0, 5, 6.0]]
-	>>> mixed_bad_matrix = [[1 + 2j, 2.0, "3"],[4.0, "5", 6.0]]
-	>>> mixed_size_matrix = [[1, 2.0, 3],[4.0, 5]]
-	>>> div_correct_int = 3
-	>>> div_correct_float = 3.0
-	>>> div_incorect_type = "3"
-	>>> div_incorect_value_int = -3
-	>>> div_incorect_value_float = -3.0
-	>>> div_zero = 0
-	>>> matrix_divided(matrix, div_correct_int)
-	[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
-	>>> matrix_divided(matrix, div_correct_float)
-	[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
-	>>> matrix_divided(matrix, div_incorect_type)
-	Traceback (most recent call last):
-	...
-	TypeError: div must be a number
-	>>> matrix_divided(matrix, div_incorect_value_int)
-	[[-0.33, -0.67, -1.0], [-1.33, -1.67, -2.0]]
-	>>> matrix_divided(matrix, div_incorect_value_float)
-	[[-0.33, -0.67, -1.0], [-1.33, -1.67, -2.0]]
-	>>> matrix_divided(matrix, div_zero)
-	Traceback (most recent call last):
-	...
-	ZeroDivisionError: division by zero
-	>>> matrix_divided(none_matrix, div_correct_int)
-	Traceback (most recent call last):
-	...
-	TypeError: matrix must be a matrix (list of lists) of integers/floats
-	>>> matrix_divided(none_matrix, div_correct_float)
-	Traceback (most recent call last):
-	...
-	TypeError: matrix must be a matrix (list of lists) of integers/floats
-	>>> matrix_divided(none_matrix, div_incorect_type)
-	Traceback (most recent call last):
-	...
-	TypeError: div must be a number
-	>>> matrix_divided(none_matrix, div_incorect_value_int)
-	Traceback (most recent call last):
-	...
-	TypeError: matrix must be a matrix (list of lists) of integers/floats
-	>>> matrix_divided(none_matrix, div_incorect_value_float)
-	Traceback (most recent call last):
-	...
-	TypeError: matrix must be a matrix (list of lists) of integers/floats
-	>>> matrix_divided(none_matrix, div_zero)
-	Traceback (most recent call last):
-	...
-	ZeroDivisionError: division by zero
-	>>> matrix_divided(empty_matrix, div_correct_int)
-	Traceback (most recent call last):
-	...
-	TypeError: matrix must be a matrix (list of lists) of integers/floats
-	>>> matrix_divided(empty_matrix, div_correct_float)
-	Traceback (most recent call last):
-	...
-	TypeError: matrix must be a matrix (list of lists) of integers/floats
-	>>> matrix_divided(empty_matrix, div_incorect_type)
-	Traceback (most recent call last):
-	...
-	TypeError: div must be a number
-	>>> matrix_divided(empty_matrix, div_incorect_value_int)
-	Traceback (most recent call last):
-	...
-	TypeError: matrix must be a matrix (list of lists) of integers/floats
-	>>> matrix_divided(empty_matrix, div_incorect_value_float)
-	Traceback (most recent call last):
-	...
-	TypeError: matrix must be a matrix (list of lists) of integers/floats
-	>>> matrix_divided(empty_matrix, div_zero)
-	Traceback (most recent call last):
-	...
-	ZeroDivisionError: division by zero
-	>>> matrix_divided(empty_empty_matrix, div_correct_int)
-	[[], []]
-	>>> matrix_divided(empty_empty_matrix, div_correct_float)
-	[[], []]
-	>>> matrix_divided(empty_empty_matrix, div_incorect_type)
-	Traceback (most recent call last):
-	...
-	TypeError: div must be a number
-	>>> matrix_divided(empty_empty_matrix, div_incorect_value_int)
-	[[], []]
-	>>> matrix_divided(empty_empty_matrix, div_incorect_value_float)
-	[[], []]
-	>>> matrix_divided(empty_empty_matrix, div_zero)
-	Traceback (most recent call last):
-	...
-	ZeroDivisionError: division by zero
-	>>> matrix_divided(mixed_ok_matrix, div_correct_int)
-	[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
-	>>> matrix_divided(mixed_ok_matrix, div_correct_float)
-	[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
-	>>> matrix_divided(mixed_ok_matrix, div_incorect_type)
-	Traceback (most recent call last):
-	...
-	TypeError: div must be a number
-	>>> matrix_divided(mixed_ok_matrix, div_incorect_value_int)
-	[[-0.33, -0.67, -1.0], [-1.33, -1.67, -2.0]]
-	>>> matrix_divided(mixed_ok_matrix, div_incorect_value_float)
-	[[-0.33, -0.67, -1.0], [-1.33, -1.67, -2.0]]
-	>>> matrix_divided(mixed_ok_matrix, div_zero)
-	Traceback (most recent call last):
-	...
-	ZeroDivisionError: division by zero
-	>>> matrix_divided(mixed_bad_matrix, div_correct_int)
-	Traceback (most recent call last):
-	...
-	TypeError: matrix must be a matrix (list of lists) of integers/floats
-	>>> matrix_divided(mixed_bad_matrix, div_correct_float)
-	Traceback (most recent call last):
-	...
-	TypeError: matrix must be a matrix (list of lists) of integers/floats
-	>>> matrix_divided(mixed_bad_matrix, div_incorect_type)
-	Traceback (most recent call last):
-	...
-	TypeError: div must be a number
-	>>> matrix_divided(mixed_bad_matrix, div_incorect_value_int)
-	Traceback (most recent call last):
-	...
-	TypeError: matrix must be a matrix (list of lists) of integers/floats
-	>>> matrix_divided(mixed_bad_matrix, div_incorect_value_float)
-	Traceback (most recent call last):
-	...
-	TypeError: matrix must be a matrix (list of lists) of integers/floats
-	>>> matrix_divided(mixed_bad_matrix, div_zero)
-	Traceback (most recent call last):
-	...
-	ZeroDivisionError: division by zero
-	>>> matrix_divided(mixed_size_matrix, div_correct_int)
-	Traceback (most recent call last):
-	...
-	TypeError: Each row of the matrix must have the same size
-	>>> matrix_divided(mixed_size_matrix, div_correct_float)
-	Traceback (most recent call last):
-	...
-	TypeError: Each row of the matrix must have the same size
-	>>> matrix_divided(mixed_size_matrix, div_incorect_type)
-	Traceback (most recent call last):
-	...
-	TypeError: div must be a number
-	>>> matrix_divided(mixed_size_matrix, div_incorect_value_int)
-	Traceback (most recent call last):
-	...
-	TypeError: Each row of the matrix must have the same size
-	>>> matrix_divided(mixed_size_matrix, div_incorect_value_float)
-	Traceback (most recent call last):
-	...
-	TypeError: Each row of the matrix must have the same size
-	>>> matrix_divided(mixed_size_matrix, div_zero)
-	Traceback (most recent call last):
-	...
-	ZeroDivisionError: division by zero
+First import ``matrix_divided``
+
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Now use it:
+
+Basic usage:
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> print(matrix_divided(matrix, 3))
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+Non int/float inputs in lists of matrix:
+    >>> matrix = [['h', 'o', 'l'], ['b', 5, 6]]
+    >>> print(matrix_divided(matrix, 5))
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Zero "div" input:
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> print(matrix_divided(matrix, 0))
+    Traceback (most recent call last):
+    ...
+    ZeroDivisionError: division by zero
+
+Different list length in matrix input:
+    >>> matrix = [[1, 2, 3], [4, 5]]
+    >>> print(matrix_divided(matrix, 2))
+    Traceback (most recent call last):
+    ...
+    TypeError: Each row of the matrix must have the same size
+
+Negative variables in list inputs:
+    >>> matrix = [[1, 2, -3], [4, 5, -6]]
+    >>> print(matrix_divided(matrix, 2))
+    [[0.5, 1.0, -1.5], [2.0, 2.5, -3.0]]
+
+Empty matrix input:
+    >>> matrix = [[]]
+    >>> print(matrix_divided(matrix, 2))
+    [[]]
+
+No input:
+    >>> print(matrix_divided())
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'

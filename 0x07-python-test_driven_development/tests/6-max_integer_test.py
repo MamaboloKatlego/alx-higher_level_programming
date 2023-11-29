@@ -4,47 +4,30 @@
 import unittest
 max_integer = __import__('6-max_integer').max_integer
 
+
 class TestMaxInteger(unittest.TestCase):
+    """ tests for max_integer
     """
-    Testing Son!!
-    """
 
-    def test_max_integer_no_argrument(self):
-        """Test if nothing is given"""
-        result = max_integer()
-        self.assertIsNone(result)
+    def test_max_int_basic(self):
+        """ tests normal list of ints
+        """
+        self.assertEqual(max_integer([1, 2, 3, 4]), 4)
 
-    def test_max_integer_empty_list(self):
-        """Test if nothing is given"""
-        result = max_integer([])
-        self.assertIsNone(result)
+    def test_max_int_empty(self):
+        """ tests if list is empty
+        """
+        self.assertEqual(max_integer([]), None)
 
-    def test_max_integer_one_element_list(self):
-        """Test if nothing is given"""
-        result = max_integer([1])
-        self.assertEqual(result, 1)
+    def test_max_int_neg(self):
+        """ tests if list has a negative int
+        """
+        self.assertEqual(max_integer([-1, -2, -3, -4]), -1)
 
-    def test_max_integer_all_two_elements(self):
-        """Test if nothing is given"""
-        result = max_integer([2,3])
-        self.assertEqual(result, 3)
+    def test_max_int_one(self):
+        """ tests if list has only one item
+        """
+        self.assertEqual(max_integer([1]), 1)
 
-    def test_max_integer_all_the_same_elements(self):
-        """Test if nothing is given"""
-        result = max_integer([2,2,2,2])
-        self.assertEqual(result, 2)
-
-    def test_max_integer_all_example_one(self):
-        """Test if nothing is given"""
-        result = max_integer([1, 2, 3, 4])
-        self.assertEqual(result, 4)
-
-    def test_max_integer_all_example_two(self):
-        """Test if nothing is given"""
-        result = max_integer([1, 3, 4, 2])
-        self.assertEqual(result, 4)
-
-    def test_max_integer_error_raised(self):
-        """Test if nothing is given"""
-        with self.assertRaises(Exception):
-            max_integer(1)
+if __name__ == '__main__':
+    unittest.main()

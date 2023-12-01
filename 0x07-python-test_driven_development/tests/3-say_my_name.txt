@@ -1,72 +1,43 @@
-=================================
-Test for module 3-say_my_name.py
-=================================
+Using ``say_my_name``
+-----------------------
 
-This tests only one function: ``say_my_name(first_name, last_name="")``.
+Checks if first_name or last_name is a str
+Prints "My name is <first name> <last name>"
 
-first name
-==========
-	None value
-	------------
-::
-	>>> say_my_name = __import__('3-say_my_name').say_my_name
-	>>> say_my_name(None, "Katlego")
-	Traceback (most recent call last):
-	    ...
-	TypeError: first_name must be a string
+First import ``say_my_name``
 
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
 
-::
-	integer value
-	-------------
-	>>> say_my_name(25, "Katlego")
-	Traceback (most recent call last):
-	    ...
-	TypeError: first_name must be a string
-	
-	
-	Ideal value (str) with last_name default
-	----------------------------------------
-	>>> say_my_name("Mamabolo")
-	My name is Mamabolo
+Now use it:
 
+Basic usage:
+    >>> say_my_name("Katlego", "Mamabolo")
+    My name is Katlego Mamabolo
 
-	Ideal value with last_name input
-	----------------------------------
-	>>> say_my_name("Mamabolo", 'Katlego')
-	My name is Mamabolo Katlego
+First name only input:
+    >>> say_my_name("Kat")
+    My name is Kat
 
+Non string input:
+    >>> say_my_name(3, 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
 
+Non string input without last_name:
+    >>> say_my_name(3)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
 
+No inputs:
+    >>> say_my_name()
+    Traceback (most recent call last):
+    ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
 
-last_name
-=========
-::
-	last name omitted
-	----------------------
-	>>> say_my_name("Mamabolo")
-	My name is Mamabolo
-
-
-	None
-	-----
-	>>> say_my_name("Mamabolo", None)
-	Traceback (most recent call last):
-	    ...
-	TypeError: last_name must be a string
-
-
-	integer value
-	--------------
-	>>> say_my_name("Mamabolo", -98)
-	Traceback (most recent call last):
-	    ...
-	TypeError: last_name must be a string
-
-
-
-Ideal cases
-============
-::
-	>>> say_my_name(" Mamabolo ", 'Katlego   123  ')
-	My name is  Mamabolo Katlego   123
+Last name wrong input:
+    >>> say_my_name("Kat", 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string

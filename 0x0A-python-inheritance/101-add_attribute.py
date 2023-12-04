@@ -9,6 +9,6 @@ def add_attribute(a_class, att_name, att_value):
     function docs
     """
     if not hasattr(a_class, "__dict__"):
-        raise TypeError("Can not add new attribute")
+        raise TypeError("Can't add new attribute")
     else:
         setattr(a_class, att_name, att_value)

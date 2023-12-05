@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # 7-add_item.py
-# MamaboloKatlego <rabotaikatlego@gmail.com>
+# Mamabolo Katlego <rabotaikatlego@gmail.com>
 """ create a list from all arguments """
 import sys
 

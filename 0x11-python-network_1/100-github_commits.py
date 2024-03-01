@@ -16,4 +16,4 @@ if __name__ == "__main__":
             sha = commit.get("sha")
             name = commit.get("commit").get("author").get("name")
             print(commit_str.format(sha, name))
-        total += 1 
+        total += 1
